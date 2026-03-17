@@ -15,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class User {
@@ -36,7 +37,7 @@ public class User {
     @Column(unique = true)
     private String email;
 
-    @NotBlank
+    @NotNull // NotBlank is only for strings, role is a enum so I chose to use NotNull
     @Enumerated(EnumType.STRING)
-    private String role;
+    private Role role;
 }
