@@ -16,7 +16,11 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 public class User {
 
@@ -28,7 +32,6 @@ public class User {
     @Column(unique = true)
     private String username;
 
-    // TODO: Hash password for security purposes
     @NotBlank
     private String password;
 
